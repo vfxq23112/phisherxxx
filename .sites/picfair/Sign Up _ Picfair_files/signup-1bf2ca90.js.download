@@ -1,0 +1,261 @@
+import{r as pt}from"./renderReactComponent-a05dc099.js";import{r as l,R as r}from"./index-c7b424f8.js";import{P as i,h as mt,s as x,C as ft}from"./styled-components.browser.esm-046084e7.js";import{F as se}from"./FormInput-997a5d68.js";import{e as ht,a as gt,c as Se,f as vt,d as yt,v as Et,g as F}from"./index-7b3d0f48.js";import{P as pe}from"./PFButton-fd3d3bf0.js";import{N as ce}from"./Notice-f3ae7d7b.js";import{p as ze}from"./picfair-black-300-f3ba4e67.js";import{M as be}from"./utils-9d91f1fa.js";import{c as bt,d as wt}from"./subtitle-58405919.js";import{a as V}from"./index-5daa65b8.js";import{F as xt,p as Ct}from"./FeatureText-42ebc1be.js";import{p as St}from"./picfair-plus-black-300-fa36bdfb.js";import{L as Pt}from"./Link-5ac3eb31.js";import"./_commonjsHelpers-725317a4.js";const G=l.createContext({}),_t=()=>new URLSearchParams(window.location.search).get("plus_checkout")==="true",$e=({children:t})=>{const[e,n]=l.useState({}),[a,o]=l.useState(_t()),[s,d]=l.useState(!1),[p,m]=l.useState(!1);return r.createElement(G.Provider,{value:{user:e,setUser:n,paying:a,setPaying:o,showNewPaymentPage:s,setShowNewPaymentPage:d,isTempEmail:p,setIsTempEmail:m}},t)};$e.propTypes={children:i.object.isRequired};const me=l.createContext({}),We=({children:t})=>{const[e,n]=l.useState({});return r.createElement(me.Provider,{value:{url:e,setUrl:n}},t)};We.propTypes={children:i.object.isRequired};const A={defaultEmail:{message:"",color:"var(--black)",borderColor:"var(--dark-grey)",valid:!0,disable:!0,grey:!1},defaultFacebookEmail:{message:"We also need your email address for sign in and notifications",color:"var(--black)",borderColor:"var(--dark-grey)",valid:!0,disable:!0,grey:!1},blankEmail:{message:"Please enter a valid email address.",color:"var(--red)",borderColor:"var(--red)",className:"error",valid:!1,disable:!0,grey:!0},invalidEmail:{message:"Please enter a valid email address.",color:"var(--red)",borderColor:"var(--red)",className:"error",valid:!1,disable:!0,grey:!0},validEmail:{message:"",color:"var(--black)",borderColor:"var(--dark-grey)",valid:!0,disable:!1,grey:!1},defaultPassword:{message:"Password must be at least 6 characters long.",color:"var(--black)",borderColor:"var(--dark-grey)",valid:!0,disable:!0,grey:!1},badPassword:{message:"Password must be at least 6 characters long.",color:"var(--red)",borderColor:"var(--red)",className:"error",valid:!1,disable:!0,grey:!0},validPassword:{message:"Password must be at least 6 characters long.",color:"var(--black)",borderColor:"var(--dark-grey)",valid:!0,disable:!1,grey:!1}},kt={message:"No spaces please. Only letters, numbers, dashes and underscores.",disable:!0,invalid:!1},Rt={message:"No spaces please. Only letters, numbers, dashes and underscores.",disable:!1,invalid:!1},Ae={color:"var(--red)",borderColor:"var(--red)",className:"error",message:"Store URL is too short.",disable:!0,invalid:!0},Me=t=>{const e=t=="username"?A.defaultFacebookEmail:A.defaultEmail,[n,a]=l.useState(""),[o,s]=l.useState(e),[d,p]=l.useState(!1),m=u=>{d&&(u.target.value.length===0?s(A.blankEmail):ht.test(u.target.value)?s(e):s(A.invalidEmail)),a(u.target.value)},g=u=>{u.valid?s(A.validEmail):s({...A.invalidEmail,message:u.message})};return{email:n,setEmail:a,emailNotice:o,setEmailNotice:s,emailBlurred:d,setEmailBlurred:p,handleEmailChange:m,emailBlur:()=>{p(!0),o.valid&&gt("/validate_email",n,g)}}};function we(){return we=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var n=arguments[e];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(t[a]=n[a])}return t},we.apply(this,arguments)}function At(t,e){if(t==null)return{};var n={},a=Object.keys(t),o,s;for(s=0;s<a.length;s++)o=a[s],!(e.indexOf(o)>=0)&&(n[o]=t[o]);return n}function ne(t){if(t===void 0)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}function Nt(t,e){t.prototype=Object.create(e.prototype),t.prototype.constructor=t,t.__proto__=e}var fe=function(t){Nt(e,t);function e(){var a;return a=t.call(this)||this,a.handleExpired=a.handleExpired.bind(ne(a)),a.handleErrored=a.handleErrored.bind(ne(a)),a.handleChange=a.handleChange.bind(ne(a)),a.handleRecaptchaRef=a.handleRecaptchaRef.bind(ne(a)),a}var n=e.prototype;return n.getValue=function(){return this.props.grecaptcha&&this._widgetId!==void 0?this.props.grecaptcha.getResponse(this._widgetId):null},n.getWidgetId=function(){return this.props.grecaptcha&&this._widgetId!==void 0?this._widgetId:null},n.execute=function(){var o=this.props.grecaptcha;if(o&&this._widgetId!==void 0)return o.execute(this._widgetId);this._executeRequested=!0},n.executeAsync=function(){var o=this;return new Promise(function(s,d){o.executionResolve=s,o.executionReject=d,o.execute()})},n.reset=function(){this.props.grecaptcha&&this._widgetId!==void 0&&this.props.grecaptcha.reset(this._widgetId)},n.handleExpired=function(){this.props.onExpired?this.props.onExpired():this.handleChange(null)},n.handleErrored=function(){this.props.onErrored&&this.props.onErrored(),this.executionReject&&(this.executionReject(),delete this.executionResolve,delete this.executionReject)},n.handleChange=function(o){this.props.onChange&&this.props.onChange(o),this.executionResolve&&(this.executionResolve(o),delete this.executionReject,delete this.executionResolve)},n.explicitRender=function(){if(this.props.grecaptcha&&this.props.grecaptcha.render&&this._widgetId===void 0){var o=document.createElement("div");this._widgetId=this.props.grecaptcha.render(o,{sitekey:this.props.sitekey,callback:this.handleChange,theme:this.props.theme,type:this.props.type,tabindex:this.props.tabindex,"expired-callback":this.handleExpired,"error-callback":this.handleErrored,size:this.props.size,stoken:this.props.stoken,hl:this.props.hl,badge:this.props.badge}),this.captcha.appendChild(o)}this._executeRequested&&this.props.grecaptcha&&this._widgetId!==void 0&&(this._executeRequested=!1,this.execute())},n.componentDidMount=function(){this.explicitRender()},n.componentDidUpdate=function(){this.explicitRender()},n.componentWillUnmount=function(){this._widgetId!==void 0&&(this.delayOfCaptchaIframeRemoving(),this.reset())},n.delayOfCaptchaIframeRemoving=function(){var o=document.createElement("div");for(document.body.appendChild(o),o.style.display="none";this.captcha.firstChild;)o.appendChild(this.captcha.firstChild);setTimeout(function(){document.body.removeChild(o)},5e3)},n.handleRecaptchaRef=function(o){this.captcha=o},n.render=function(){var o=this.props;o.sitekey,o.onChange,o.theme,o.type,o.tabindex,o.onExpired,o.onErrored,o.size,o.stoken,o.grecaptcha,o.badge,o.hl;var s=At(o,["sitekey","onChange","theme","type","tabindex","onExpired","onErrored","size","stoken","grecaptcha","badge","hl"]);return r.createElement("div",we({},s,{ref:this.handleRecaptchaRef}))},e}(r.Component);fe.displayName="ReCAPTCHA";fe.propTypes={sitekey:i.string.isRequired,onChange:i.func,grecaptcha:i.object,theme:i.oneOf(["dark","light"]),type:i.oneOf(["image","audio"]),tabindex:i.number,onExpired:i.func,onErrored:i.func,size:i.oneOf(["compact","normal","invisible"]),stoken:i.string,hl:i.string,badge:i.oneOf(["bottomright","bottomleft","inline"])};fe.defaultProps={onChange:function(){},theme:"light",type:"image",tabindex:0,size:"normal",badge:"bottomright"};function xe(){return xe=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var n=arguments[e];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(t[a]=n[a])}return t},xe.apply(this,arguments)}function Lt(t,e){if(t==null)return{};var n={},a=Object.keys(t),o,s;for(s=0;s<a.length;s++)o=a[s],!(e.indexOf(o)>=0)&&(n[o]=t[o]);return n}function Ot(t,e){t.prototype=Object.create(e.prototype),t.prototype.constructor=t,t.__proto__=e}var T={},Tt=0;function jt(t,e){return e=e||{},function(a){var o=a.displayName||a.name||"Component",s=function(p){Ot(m,p);function m(f,u){var c;return c=p.call(this,f,u)||this,c.state={},c.__scriptURL="",c}var g=m.prototype;return g.asyncScriptLoaderGetScriptLoaderID=function(){return this.__scriptLoaderID||(this.__scriptLoaderID="async-script-loader-"+Tt++),this.__scriptLoaderID},g.setupScriptURL=function(){return this.__scriptURL=typeof t=="function"?t():t,this.__scriptURL},g.asyncScriptLoaderHandleLoad=function(u){var c=this;this.setState(u,function(){return c.props.asyncScriptOnLoad&&c.props.asyncScriptOnLoad(c.state)})},g.asyncScriptLoaderTriggerOnScriptLoaded=function(){var u=T[this.__scriptURL];if(!u||!u.loaded)throw new Error("Script is not loaded.");for(var c in u.observers)u.observers[c](u);delete window[e.callbackName]},g.componentDidMount=function(){var u=this,c=this.setupScriptURL(),v=this.asyncScriptLoaderGetScriptLoaderID(),h=e,P=h.globalName,N=h.callbackName,y=h.scriptId;if(P&&typeof window[P]<"u"&&(T[c]={loaded:!0,observers:{}}),T[c]){var C=T[c];if(C&&(C.loaded||C.errored)){this.asyncScriptLoaderHandleLoad(C);return}C.observers[v]=function(w){return u.asyncScriptLoaderHandleLoad(w)};return}var S={};S[v]=function(w){return u.asyncScriptLoaderHandleLoad(w)},T[c]={loaded:!1,observers:S};var R=document.createElement("script");R.src=c,R.async=!0;for(var j in e.attributes)R.setAttribute(j,e.attributes[j]);y&&(R.id=y);var z=function(I){if(T[c]){var $=T[c],q=$.observers;for(var O in q)I(q[O])&&delete q[O]}};N&&typeof window<"u"&&(window[N]=function(){return u.asyncScriptLoaderTriggerOnScriptLoaded()}),R.onload=function(){var w=T[c];w&&(w.loaded=!0,z(function(I){return N?!1:(I(w),!0)}))},R.onerror=function(){var w=T[c];w&&(w.errored=!0,z(function(I){return I(w),!0}))},document.body.appendChild(R)},g.componentWillUnmount=function(){var u=this.__scriptURL;if(e.removeOnUnmount===!0)for(var c=document.getElementsByTagName("script"),v=0;v<c.length;v+=1)c[v].src.indexOf(u)>-1&&c[v].parentNode&&c[v].parentNode.removeChild(c[v]);var h=T[u];h&&(delete h.observers[this.asyncScriptLoaderGetScriptLoaderID()],e.removeOnUnmount===!0&&delete T[u])},g.render=function(){var u=e.globalName,c=this.props;c.asyncScriptOnLoad;var v=c.forwardedRef,h=Lt(c,["asyncScriptOnLoad","forwardedRef"]);return u&&typeof window<"u"&&(h[u]=typeof window[u]<"u"?window[u]:void 0),h.ref=v,l.createElement(a,h)},m}(l.Component),d=l.forwardRef(function(p,m){return l.createElement(s,xe({},p,{forwardedRef:m}))});return d.displayName="AsyncScriptLoader("+o+")",d.propTypes={asyncScriptOnLoad:i.func},mt(d,a)}}var Ve="onloadcallback",It="grecaptcha";function Ut(){return typeof window<"u"&&window.recaptchaOptions||{}}function qt(){var t=Ut(),e=t.useRecaptchaNet?"recaptcha.net":"www.google.com";return"https://"+e+"/recaptcha/api.js?onload="+Ve+"&render=explicit"}const Bt=jt(qt,{callbackName:Ve,globalName:It})(fe),Ke=({recaptcha_site_key:t})=>{const e=r.createRef(),{setUser:n}=l.useContext(G),{setUrl:a}=l.useContext(me),{email:o,emailNotice:s,setEmailNotice:d,setEmailBlurred:p,handleEmailChange:m,emailBlur:g}=Me("signup"),[f,u]=l.useState(""),[c,v]=l.useState(A.defaultPassword),h=S=>{n(S.user_data.user),a(S.redirect_url),vt.hide()},P=S=>{o.length===0&&(p(!0),d(A.blankEmail)),f.length===0&&v(A.defaultPassword);let R={user:{email:o,password:f},"g-recaptcha-response":S};!s.disable&&!c.disable&&Se("/users",R,h)},N=S=>{u(S.target.value),S.target.value.length>5?v(A.validPassword):v(A.defaultPassword)},y=()=>{f.length>5?v(A.validPassword):v(A.badPassword)},C=()=>{if(t)return r.createElement(Bt,{ref:e,size:"invisible",sitekey:t,onChange:P})};return r.createElement("form",{onSubmit:S=>{S.preventDefault(),t?e.current.execute():P()}},r.createElement("div",null,C(),r.createElement(se,{type:"email",name:"email",placeholder:"Email address",value:o,change:m,borderColor:s.borderColor,onBlur:g,icon:s.disable?null:r.createElement("i",{className:"fas fa-check-circle checkmark"}),iconColor:"var(--light-green)",autocapitalize:"off"}),r.createElement(ce,{notice:s}),r.createElement(se,{type:"password",name:"password",placeholder:"Password",value:f,change:N,borderColor:c.borderColor,onBlur:y,icon:c.disable?null:r.createElement("i",{className:"fas fa-check-circle checkmark"}),iconColor:"var(--light-green)"}),r.createElement(ce,{notice:c})),r.createElement("div",null,r.createElement(pe,{text:"Sign up for free",disabled:s.grey||c.grey}),r.createElement("p",{className:"auth-nav-link"},"Already have an account?",r.createElement("a",{href:"/session/new"},"Sign in")),r.createElement("p",{className:"auth-nav-link privacy-policy"},"By signing up you agree to our",r.createElement("a",{href:"/legals/privacy"},"Terms of Service"),r.createElement("span",null," and"),r.createElement("a",{href:"/legals/privacy"},"Privacy Policy."))))};Ke.propTypes={recaptcha_site_key:i.string};const Ge=()=>{const{setUser:t,setShowNewPaymentPage:e,isTempEmail:n}=l.useContext(G),{email:a,handleEmailChange:o,emailNotice:s,emailBlur:d}=Me("username"),[p,m]=l.useState(""),[g,f]=l.useState(kt);l.useEffect(()=>{window.scroll({top:0,left:0})},[]);const u=y=>{y.valid?f(Rt):f({...Ae,message:y.message})},c=l.useCallback(yt(y=>Et("/validate_username",y,u),500),[]),v=y=>{m(y),y.length>2?c(y):f(Ae)},h=y=>{t(y.user_data),e(y.show_new_payment_page),y.tracking_event&&(window.dataLayer=window.dataLayer||[],dataLayer.push({event:y.tracking_event}))},P=y=>{y.preventDefault(),Se("/assign_user_details",{username:p,email:a},h)},N=()=>n?g.disable||s.disable:g.disable;return r.createElement("div",{className:"username-container"},r.createElement("form",{onSubmit:P},r.createElement("h1",null,r.createElement("img",{src:ze,alt:"Picfair Logo",className:"pf-logo"}),r.createElement("p",null,"Choose your Picfair Store URL."),r.createElement("p",null,"Don't worry, you can change this anytime.")),r.createElement("div",{className:"inputs-container"},r.createElement("div",null,r.createElement("div",{className:`input-container ${g.invalid&&"invalid"}`},r.createElement("input",{className:"pf-input",type:"text",name:"username",value:p,onChange:y=>v(y.target.value)}),r.createElement("label",{htmlFor:"username"},".picfair.com")),r.createElement(ce,{notice:g})),n&&r.createElement("div",null,r.createElement(se,{type:"email",name:"email",placeholder:"Email address",value:a,change:o,borderColor:s.borderColor,onBlur:d,icon:s.disable?null:r.createElement("i",{className:"fas fa-check-circle checkmark"}),iconColor:"var(--light-green)"}),r.createElement(ce,{notice:s}))),r.createElement(pe,{text:"Continue",disabled:N()})))};Ge.propTypes={};const Z=({redirect:t})=>(l.useEffect(()=>{window.location.assign(t)},[t]),r.createElement("div",null,"Loading..."));Z.propTypes={redirect:i.string};Z.defaultProps={redirect:"/dashboard"};function oe(t){"@babel/helpers - typeof";return typeof Symbol=="function"&&typeof Symbol.iterator=="symbol"?oe=function(e){return typeof e}:oe=function(e){return e&&typeof Symbol=="function"&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},oe(t)}function He(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function Ne(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(t);e&&(a=a.filter(function(o){return Object.getOwnPropertyDescriptor(t,o).enumerable})),n.push.apply(n,a)}return n}function Le(t){for(var e=1;e<arguments.length;e++){var n=arguments[e]!=null?arguments[e]:{};e%2?Ne(Object(n),!0).forEach(function(a){He(t,a,n[a])}):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(n)):Ne(Object(n)).forEach(function(a){Object.defineProperty(t,a,Object.getOwnPropertyDescriptor(n,a))})}return t}function Dt(t,e){return Ft(t)||zt(t,e)||$t(t,e)||Wt()}function Ft(t){if(Array.isArray(t))return t}function zt(t,e){if(!(typeof Symbol>"u"||!(Symbol.iterator in Object(t)))){var n=[],a=!0,o=!1,s=void 0;try{for(var d=t[Symbol.iterator](),p;!(a=(p=d.next()).done)&&(n.push(p.value),!(e&&n.length===e));a=!0);}catch(m){o=!0,s=m}finally{try{!a&&d.return!=null&&d.return()}finally{if(o)throw s}}return n}}function $t(t,e){if(t){if(typeof t=="string")return Oe(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);if(n==="Object"&&t.constructor&&(n=t.constructor.name),n==="Map"||n==="Set")return Array.from(t);if(n==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return Oe(t,e)}}function Oe(t,e){(e==null||e>t.length)&&(e=t.length);for(var n=0,a=new Array(e);n<e;n++)a[n]=t[n];return a}function Wt(){throw new TypeError(`Invalid attempt to destructure non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}var Ce=function(e){var n=r.useRef(e);return r.useEffect(function(){n.current=e},[e]),n.current},K=function(e){return e!==null&&oe(e)==="object"},Mt=function(e){return K(e)&&typeof e.then=="function"},Vt=function(e){return K(e)&&typeof e.elements=="function"&&typeof e.createToken=="function"&&typeof e.createPaymentMethod=="function"&&typeof e.confirmCardPayment=="function"},Te="[object Object]",Kt=function t(e,n){if(!K(e)||!K(n))return e===n;var a=Array.isArray(e),o=Array.isArray(n);if(a!==o)return!1;var s=Object.prototype.toString.call(e)===Te,d=Object.prototype.toString.call(n)===Te;if(s!==d)return!1;if(!s&&!a)return e===n;var p=Object.keys(e),m=Object.keys(n);if(p.length!==m.length)return!1;for(var g={},f=0;f<p.length;f+=1)g[p[f]]=!0;for(var u=0;u<m.length;u+=1)g[m[u]]=!0;var c=Object.keys(g);if(c.length!==p.length)return!1;var v=e,h=n,P=function(y){return t(v[y],h[y])};return c.every(P)},Je=function(e,n,a){return K(e)?Object.keys(e).reduce(function(o,s){var d=!K(n)||!Kt(e[s],n[s]);return a.includes(s)?(d&&console.warn("Unsupported prop change: options.".concat(s," is not a mutable property.")),o):d?Le(Le({},o||{}),{},He({},s,e[s])):o},null):null},Gt="Invalid prop `stripe` supplied to `Elements`. We recommend using the `loadStripe` utility from `@stripe/stripe-js`. See https://stripe.com/docs/stripe-js/react#elements-props-stripe for details.",je=function(e){if(e===null||Vt(e))return e;throw new Error(Gt)},Ht=function(e){if(Mt(e))return{tag:"async",stripePromise:Promise.resolve(e).then(je)};var n=je(e);return n===null?{tag:"empty"}:{tag:"sync",stripe:n}},Pe=r.createContext(null);Pe.displayName="ElementsContext";var Jt=function(e,n){if(!e)throw new Error("Could not find Elements context; You need to wrap the part of your app that ".concat(n," in an <Elements> provider."));return e},Ze=function(e){var n=e.stripe,a=e.options,o=e.children,s=r.useRef(!1),d=r.useRef(!0),p=r.useMemo(function(){return Ht(n)},[n]),m=r.useState(function(){return{stripe:null,elements:null}}),g=Dt(m,2),f=g[0],u=g[1],c=Ce(n);c!==null&&c!==n&&console.warn("Unsupported prop change on Elements: You cannot change the `stripe` prop after setting it."),s.current||(p.tag==="sync"&&(s.current=!0,u({stripe:p.stripe,elements:p.stripe.elements(a)})),p.tag==="async"&&(s.current=!0,p.stripePromise.then(function(h){h&&d.current&&u({stripe:h,elements:h.elements(a)})})));var v=Ce(a);return r.useEffect(function(){if(f.elements){var h=Je(a,v,["clientSecret","fonts"]);h&&f.elements.update(h)}},[a,v,f.elements]),r.useEffect(function(){return function(){d.current=!1}},[]),r.useEffect(function(){var h=f.stripe;!h||!h._registerWrapper||!h.registerAppInfo||(h._registerWrapper({name:"react-stripe-js",version:"1.7.0"}),h.registerAppInfo({name:"react-stripe-js",version:"1.7.0",url:"https://stripe.com/docs/stripe-js/react"}))},[f.stripe]),r.createElement(Pe.Provider,{value:f},o)};Ze.propTypes={stripe:i.any,options:i.object};var le=function(e){var n=r.useContext(Pe);return Jt(n,e)},Zt=function(){var e=le("calls useElements()"),n=e.elements;return n},Yt=function(){var e=le("calls useStripe()"),n=e.stripe;return n};i.func.isRequired;var W=function(e){var n=r.useRef(e);return r.useEffect(function(){n.current=e},[e]),function(){n.current&&n.current.apply(n,arguments)}},M=function(){},Qt=function(e){return e.charAt(0).toUpperCase()+e.slice(1)},_=function(e,n){var a="".concat(Qt(e),"Element"),o=function(m){var g=m.id,f=m.className,u=m.options,c=u===void 0?{}:u,v=m.onBlur,h=v===void 0?M:v,P=m.onFocus,N=P===void 0?M:P,y=m.onReady,C=y===void 0?M:y,S=m.onChange,R=S===void 0?M:S,j=m.onEscape,z=j===void 0?M:j,w=m.onClick,I=w===void 0?M:w,$=le("mounts <".concat(a,">")),q=$.elements,O=r.useRef(null),H=r.useRef(null),he=W(C),Y=W(h),ge=W(N),ve=W(I),Q=W(R),U=W(z);r.useLayoutEffect(function(){if(O.current==null&&q&&H.current!=null){var b=q.create(e,c);O.current=b,b.mount(H.current),b.on("ready",function(){return he(b)}),b.on("change",Q),b.on("blur",Y),b.on("focus",ge),b.on("escape",U),b.on("click",ve)}});var J=Ce(c);return r.useEffect(function(){if(O.current){var b=Je(c,J,["paymentRequest"]);b&&O.current.update(b)}},[c,J]),r.useLayoutEffect(function(){return function(){O.current&&O.current.destroy()}},[]),r.createElement("div",{id:g,className:f,ref:H})},s=function(m){le("mounts <".concat(a,">"));var g=m.id,f=m.className;return r.createElement("div",{id:g,className:f})},d=n?s:o;return d.propTypes={id:i.string,className:i.string,onChange:i.func,onBlur:i.func,onFocus:i.func,onReady:i.func,onClick:i.func,options:i.object},d.displayName=a,d.__elementType=e,d},k=typeof window>"u";_("auBankAccount",k);_("card",k);var Ie=_("cardNumber",k),Ue=_("cardExpiry",k),qe=_("cardCvc",k);_("fpxBank",k);_("iban",k);_("idealBank",k);_("p24Bank",k);_("epsBank",k);_("payment",k);_("paymentRequestButton",k);_("linkAuthentication",k);_("shippingAddress",k);_("affirmMessage",k);_("afterpayClearpayMessage",k);var Ye="https://js.stripe.com/v3",Xt=/^https:\/\/js\.stripe\.com\/v3\/?(\?.*)?$/,Be="loadStripe.setLoadParameters was called but an existing Stripe.js script already exists in the document; existing script parameters will be used",er=function(){for(var e=document.querySelectorAll('script[src^="'.concat(Ye,'"]')),n=0;n<e.length;n++){var a=e[n];if(Xt.test(a.src))return a}return null},tr=function(e){var n=e&&!e.advancedFraudSignals?"?advancedFraudSignals=false":"",a=document.createElement("script");a.src="".concat(Ye).concat(n);var o=document.head||document.body;if(!o)throw new Error("Expected document.body not to be null. Stripe.js requires a <body> element.");return o.appendChild(a),a},rr=function(e,n){!e||!e._registerWrapper||e._registerWrapper({name:"stripe-js",version:"1.22.0",startTime:n})},ae=null,nr=function(e){return ae!==null||(ae=new Promise(function(n,a){if(typeof window>"u"){n(null);return}if(window.Stripe&&e&&console.warn(Be),window.Stripe){n(window.Stripe);return}try{var o=er();o&&e?console.warn(Be):o||(o=tr(e)),o.addEventListener("load",function(){window.Stripe?n(window.Stripe):a(new Error("Stripe.js not available"))}),o.addEventListener("error",function(){a(new Error("Failed to load Stripe.js"))})}catch(s){a(s);return}})),ae},ar=function(e,n,a){if(e===null)return null;var o=e.apply(void 0,n);return rr(o,a),o},Qe=Promise.resolve().then(function(){return nr(null)}),Xe=!1;Qe.catch(function(t){Xe||console.warn(t)});var or=function(){for(var e=arguments.length,n=new Array(e),a=0;a<e;a++)n[a]=arguments[a];Xe=!0;var o=Date.now();return Qe.then(function(s){return ar(s,n,o)})};const ir=t=>r.createElement("span",{className:"regular"},t),sr=(t,e)=>r.createElement("span",null,r.createElement("span",{className:"strike"},t)," ",r.createElement("span",{className:"good"},e)),cr=t=>({month:"monthly",year:"annual"})[t],lr=t=>t==="once"?"at the full price":"",_e=({period:t,renewDate:e,regularPrice:n,discountPrice:a,discountDuration:o})=>r.createElement(bt,null,"The ",cr(t)," plan costs ",a?sr(n,a):ir(n)," per"," ",t,", it will automatically renew ",lr(o)," on the ",e,".");_e.propTypes={period:i.string.isRequired,renewDate:i.string.isRequired,regularPrice:i.string.isRequired,discountPrice:i.string,discountDuration:i.string};_e.defaultPropss={discountPrice:""};const De={incomplete_number:"Please enter a valid card number",invalid_number:"Please enter a valid card number",incomplete_expiry:"Please enter your expiration date",invalid_expiry_year_past:"Please enter a valid expiration date",invalid_expiry_year:"Please enter a valid expiration date",incomplete_cvc:"Please enter your security code",invalid_cvc:"Pleasae enter a valid security code",noZip:"Please enter your card's zip or postal code",invalidZip:"Please enter a valid zip or postal code"},ur=x.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`,dr=x.div`
+  height: 620px !important;
+`,pr=x.div`
+  height: 20%;
+  padding-top: 8px;
+  .strike {
+    text-decoration: line-through;
+  }
+  .good {
+    color: var(--light-green);
+  }
+`,mr=x.div`
+  height: 20%;
+`,fr=x.div`
+  height: 17%;
+  .coupon-container {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 0.85fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 5px;
+    grid-template-areas:
+      'coupon-input coupon-input apply-coupon'
+      'coupon-text coupon-text coupon-text';
+  }
+  .coupon-input {
+    grid-area: coupon-input;
+  }
+  .apply-coupon {
+    grid-area: apply-coupon;
+    display: inline-block;
+    color: var(--dark-grey);
+    background: var(--light);
+    border: 1px solid var(--dark-grey);
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    vertical-align: middle;
+    max-width: 100px;
+    padding: 8px;
+    text-align: center;
+    border-radius: 4px;
+  }
+  .coupon-text {
+    grid-area: coupon-text;
+    font-size: 12px;
+    line-height: 16px;
+    padding-top: 8px;
+  }
+
+  .coupon-result {
+    font-family: Work Sans, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--dark);
+    padding-top: 4px;
+  }
+
+  .coupon-result .checkmark {
+    color: var(--light-green);
+    margin-right: 5px;
+  }
+  .coupon-error {
+    color: var(--red);
+    padding-right: 4px;
+  }
+`,hr=x.form``,gr=x.div`
+  height: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-template-columns: 1fr 0.5fr 1.5fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    'num num num'
+    'exp exp cvc'
+    'zip zip zip'
+    'err err err';
+
+  .num {
+    grid-area: num;
+  }
+  .exp {
+    grid-area: exp;
+  }
+  .cvc {
+    grid-area: cvc;
+  }
+  .zip {
+    grid-area: zip;
+  }
+  .err {
+    grid-area: err;
+    padding: 8px 0px 0px 8px;
+    line-height: 1.3em;
+  }
+  .StripeElement,
+  input {
+    padding: 10px 14px;
+    font-size: 1em;
+    background: white;
+    width: 100%;
+  }
+  #stripe-checkout-card-number .StripeElement {
+    border: 1px solid var(--dark-grey);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  #stripe-checkout-card-expiry .StripeElement {
+    border-right: 1px solid var(--dark-grey);
+    border-left: 1px solid var(--dark-grey);
+  }
+  #stripe-checkout-card-cvc .StripeElement {
+    border-right: 1px solid var(--dark-grey);
+  }
+  .zip input {
+    border: 1px solid var(--dark-grey);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    ::placeholder {
+      color: var(--dark-grey);
+      opacity: 1;
+    }
+    ::-moz-placeholder: {
+      color: var(--dark-grey);
+      opacity: 1;
+    }
+  }
+`,vr=x.div`
+  color: var(--red);
+  display: flex;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 450px;
+  animation-delay: 50ms;
+  animation-fill-mode: forwards;
+  will-change: opacity;
+  font-size: 12px;
+
+  & svg {
+    margin-right: 10px;
+  }
+`,et=({children:t})=>r.createElement(vr,{className:"err",role:"alert"},t);et.propTypes={children:i.any.isRequired};const yr=x.div`
+  display: flex;
+  border-radius: 20px;
+  border: 1px solid var(--dark-grey);
+  padding: 3px;
+  margin-bottom: 20px;
+
+  p {
+    text-align: center;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 14px;
+    width: 50%;
+    margin: 0px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  p.selected {
+    background-color: var(--purple);
+    color: white;
+  }
+  p.not-selected {
+    color: black;
+  }
+`,tt=({periodChange:t,period:e})=>r.createElement(yr,null,r.createElement("p",{onClick:()=>t("year"),className:`stripe-plan-year-label ${e==="month"?"not-selected":"selected"}`},"Annual"),r.createElement("p",{onClick:()=>t("month"),className:`stripe-plan-month-label ${e==="month"?"selected":"not-selected"}`},"Monthly"));tt.propTypes={period:i.string.isRequired,periodChange:i.func.isRequired};const Fe={iconColor:"#33B346",color:"#191919",fontWeight:400,fontFamily:"Work Sans, serif",fontSize:"16px",fontSmoothing:"antialiased",":-webkit-autofill":{color:"#191919"},"::placeholder":{color:"#999999"}},Er={showIcon:!1,iconStyle:"solid",classes:{focus:"is-focused",empty:"is-empty"},style:{base:{iconColor:"#33B346",color:"#191919",fontWeight:400,fontFamily:"Work Sans, serif",fontSize:"16px",fontSmoothing:"antialiased",":-webkit-autofill":{color:"#191919"},"::placeholder":{color:"#999999"}},invalid:{iconColor:"#fc5c5c",color:"#fc5c5c"}}},br="An error has occurred.",rt=({user:t,plans:e})=>{const[n,a]=l.useState({}),[o,s]=l.useState({}),[d,p]=l.useState(null),[m,g]=l.useState(e.currency),[f,u]=l.useState(null),[c,v]=l.useState(""),[h,P]=l.useState(null),[N,y]=l.useState(null),[C,S]=l.useState("year"),[R,j]=l.useState(!1),[z,w]=l.useState(!1),[I,$]=l.useState(!0),q=E=>{v(E.target.value)},O=E=>{v(E.target.value)},H=E=>{const B=E.target.value;g(B);const L=new URL(window.location);L.searchParams.set("currency",B),L.searchParams.set("plus_checkout","true"),window.location.href=L.href},he=()=>{if(f)return r.createElement(_e,{period:C,renewDate:f,regularPrice:n[C],discountPrice:o[C],discountDuration:d})},Y=async E=>{const L=await(await be("/apply_coupon_code",{coupon_code:E})).json();if(L.discounts){if(s({month:F(e.currency,L.discounts.month),year:F(e.currency,L.discounts.year)}),p(L.discounts.duration),L.discounts[C]===null){const ee=["year","month"].filter(te=>te!==C)[0];X(ee)}j(!1)}else j(!0);P(L.stripe_coupon_id)},ge=async E=>{E.preventDefault(),c&&Y(c)},ve=async()=>{(await(await be("/apply_coupon_code",{coupon_code:null})).json()).message==="Coupon not found"&&(v(""),P(null),s({}),p(null),j(!1))},[Q,U]=l.useState(!1),[J,b]=l.useState();l.useEffect(()=>{const E=B=>{B.preventDefault(),window.location.reload()};return window.history.pushState(null,null,window.location.pathname),window.addEventListener("popstate",E),()=>{window.removeEventListener("popstate",E)}},[]),l.useEffect(()=>{a({year:F(e.currency,e.year.price),month:F(e.currency,e.month.price)}),u(e.year.renews),y(e.year.stripe_plan_id),P(e.stripe_coupon_id),s({month:F(e.currency,e.month.discount_price),year:F(e.currency,e.year.discount_price)}),p(e.discount_duration),e.stripe_coupon_id&&e.year.discount_price===null?X("month"):X("year"),e.stripe_coupon_id===null&&Y(defaultCouponCode),j(!1)},[e]);const X=E=>{S(E),u(e[E].renews),y(e[E].stripe_plan_id)},ye=Yt(),lt=Zt(),ut=async E=>{var ee,te;if(E.preventDefault(),!E.target.zip.value){b(De.noZip),U(!1);return}if(suspiciousEmailRegex&&t.email.match(suspiciousEmailRegex)){U(!0),await new Promise(D=>setTimeout(D,3e3)),b("Your card was declined"),U(!1);return}const B={email:t.email,address:{postal_code:E.target.zip.value}};U(!0);const L=lt.getElement(Ie,Ue,qe);try{const D=await ye.createPaymentMethod({type:"card",card:L,billing_details:B});if(D.error){b(De[D.error.code]||"An error has occured."),U(!1);return}const dt={customer_id:t.stripe_customer_id,payment_method_id:D.paymentMethod.id,price_id:N,coupon_code:h},re=await(await be("/account/stripe_subscriptions",dt)).json();if(re.status==="success"){const Ee=re.data.subscription.latest_invoice.payment_intent;if(Ee.status==="requires_action"){const Re=await ye.confirmCardPayment(Ee.client_secret);if(((ee=Re.paymentIntent)==null?void 0:ee.status)==="succeeded")window.location.assign("/account/picfair_plus/subscribed");else{U(!1),b(Re.error.message);return}}else if(re.data.subscription.status==="active")window.location.assign("/account/picfair_plus/subscribed");else{U(!1),b(Ee.last_payment_error.message);return}}else{U(!1),b(((te=re.error)==null?void 0:te.message)||br);return}}catch(D){b(D.message);return}};return r.createElement(dr,null,r.createElement("img",{src:ze,alt:"Picfair Logo",className:"pf-logo"}),r.createElement(ur,{className:"payment-container"},r.createElement(pr,null,he()),r.createElement("select",{id:"plus-currency-select",className:"currency-select",value:m,onChange:H},e.currencies_available.map(E=>r.createElement("option",{key:E,value:E},E))),r.createElement(mr,null,r.createElement(tt,{periodChange:X,period:C})),r.createElement(fr,null,r.createElement("form",{onSubmit:ge},h?r.createElement("div",{key:"coupon",className:"coupon-result-container"},r.createElement("div",{className:"coupon-result"},r.createElement("i",{className:"fas fa-check-circle checkmark"}),h),r.createElement("div",{className:"coupon-text"},"Discount applied."," ",r.createElement("span",{className:"underline",onClick:()=>ve()},"Remove"))):r.createElement("div",{className:"coupon-container"},r.createElement("div",{className:"coupon-input"},r.createElement(se,{name:"discount",value:c,change:q,valid:O})),r.createElement("button",{className:"apply-coupon"},"Apply"),r.createElement("div",{className:"coupon-text"},R?r.createElement("div",null,r.createElement("span",{className:"coupon-error"},"This is not a valid discount code.")):r.createElement("span",null,"You can enter a discount code here"))))),r.createElement(hr,{className:"card-section",onSubmit:ut},r.createElement(gr,null,r.createElement("div",{className:"num",id:"stripe-checkout-card-number"},r.createElement(Ie,{options:{...Er,showIcon:z},id:"cardNumber",onChange:E=>{E.empty?(w(!1),$(!0)):I&&(w(!0),$(!1))},onBlur:()=>{I&&w(!1)},onFocus:()=>{w(!0),b(!1)}})),r.createElement("div",{className:"exp",id:"stripe-checkout-card-expiry"},r.createElement(Ue,{id:"expiry",options:{style:{base:Fe}},onFocus:()=>{b(!1)}})),r.createElement("div",{className:"cvc",id:"stripe-checkout-card-cvc"},r.createElement(qe,{id:"cvc",options:{style:{base:Fe}},onFocus:()=>{b(!1)}})),r.createElement("div",{className:"zip"},r.createElement("input",{name:"zip",label:"zip",type:"text",placeholder:"Zip / Postal Code",onFocus:()=>{b(!1)}})),J&&r.createElement(et,null,J)),r.createElement(pe,{text:Q?"Processing...":"Complete payment",disabled:Q||!ye,customClass:"subscription-submit"}))))};rt.propTypes={user:i.object.isRequired,plans:i.object.isRequired};const nt=({plans:t,stripe_key:e})=>{const{user:n,paying:a}=l.useContext(G),o=or(e);return l.useEffect(()=>{window.scroll({top:0,left:0}),document.getElementById("form-container").classList.remove("full-width")},[]),r.createElement(Ze,{stripe:o,options:{fonts:[{cssSrc:"https://fonts.googleapis.com/css?family=Work+Sans&display=swap"}]}},r.createElement(rt,{plan:a,user:n,plans:t}))};nt.propTypes={stripe_key:i.string.isRequired,plans:i.object.isRequired};const wr=x.p`
+  padding: 15px 0;
+  color: var(--dark);
+  white-space: nowrap;
+  display: flex;
+  justify-content: flex-start;
+  ${V("tablet")`
+    font-size: 14px;
+    justify-content: center;
+  `};
+`,xr=x.span`
+  border: 1px solid black;
+  padding: 5px 15px;
+  border-radius: 20px;
+`,ue=({plan:t,price:e,currency:n})=>{const[a,o]=l.useState({});l.useEffect(()=>{t==="plus"&&o({id:"su-annual-price"})},[]);const s=()=>t==="plus"?`From ${F(n,e*defaultCouponMultiplyPct/12)}/month when paid annually`:"Free";return r.createElement(wr,{...a},r.createElement(xr,null,s()))};ue.propTypes={plan:i.string,price:i.string,currency:i.string};ue.defaultProps={plan:"free",price:"90",currency:"GBP"};const Cr="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI1SURBVHgBnZQ9bhpBFMd3CUhQIJMOaLK5AenSZX2CmBOEdG45gfEJEp/ApEtJylSsu3TenMCbAoFE4bWEhAAB+f2tAc0uy4f9pNl5M/Pe/33ucx1DFahYLDaWy2U8Ho9D5wSqVque67q3rIbO6/W6OxwO2+Lf6FOv168KhcJP2MtcLndZLpefJpPJn2PAyN2zCbRo1kfuKuj+dgWKpY4EsRzDX2P1O974GPnC2efJs97D6XTaVHSc+1kGeX+bR7BlzhGCzdVqFddqNSn48AF3NwLbZAz+wjmB8htv8K6p/Bovnjh/GAwG21yrBjEE29PZ87xwPp8rgkoKM5JcDiZU+BaoQvVtUCK4KJVK3YR2FMVE1LbvTKrOnz2GaY9GowDlrsnPV+PZloxXZ+lw0etSC6WrIRl0exvdvEDVNvAq1A7oMUI/UgDp+5zZfT3KA+cVhGMdIn7YASYUVfqv83oKWJ4KnACGzqyWyiSMeyZlWRTpQ2/vAB/1CMN3gD/wQ93uM0BnJYFR+sf2bh+qCsRqIfeeFnNlgJx+s0Q8fRaLRZQAlkcmzwfJNsDa1gTdFlu401H8RRVCfCTElvNCUlrUEXt1Tcs8HihQJikl6VbLEro31j3nBNJkRH6tSZh+S3dFwNLw7h9Kiwm/b8at8hqlZVzbugQ1kJ4fXPfKKPzSzn1sjH5i9zkH7Nec1R0ap+fm904CKwU8/uCxs/FKncLdZ8ca9Gx33PU0Y3Snws9mM3l/Y4+E/xedSx8BcWASAAAAAElFTkSuQmCC",Sr=x.div`
+  background-color: var(--light-yellow);
+  padding: 20px;
+  border-radius: 4px;
+  min-width: 600px;
+  ${V("tablet")`
+    min-width: unset;
+    text-align: center;
+  `};
+`,Pr=x.div`
+  display: ${t=>t.loaded?"inline-block":"none"};
+  align-items: center;
+  align-self: flex-start;
+  animation: shake 0.05s ease-in-out 0.05s 10 alternate;
+  animation-delay: 400ms;
+  @keyframes shake {
+    from {
+      transform: rotate(10deg);
+    }
+    to {
+      transform-origin: center center;
+      transform: rotate(-10deg);
+    }
+  }
+`,_r=x.div`
+  margin: 10px 0;
+`,kr=x.div`
+  display: inline-block;
+  margin: 0 15px;
+  font-weight: 900;
+`,Rr=x.span`
+  border: dashed 1px black;
+  padding: 3px 10px;
+  border-radius: 5px;
+  letter-spacing: 0.24em;
+  font-weight: 900;
+  ${V("tablet")`
+    display: block;
+    margin-top: 20px;
+  `};
+`,at=({code:t,percentage:e})=>{const[n,a]=l.useState(!1);return r.createElement(Sr,null,r.createElement(wt,null,r.createElement(Pr,{loaded:n},r.createElement("img",{src:Cr,alt:"Alarm Clock",onLoad:()=>a(!0)})),r.createElement(kr,null,"LIMITED TIME"),r.createElement(_r,null,"Get ",e,"% off Picfair Plus using code ",r.createElement(Rr,null,t))))};at.propTypes={code:i.string.isRequired,percentage:i.string.isRequired};const Ar=x.img`
+  display: block;
+  height: ${t=>t.height};
+  object-fit: contain;
+  margin-right: 40px;
+  ${V("tablet")`
+    margin-left: auto;
+    margin-right: auto;
+  `};
+`,de=({source:t,height:e})=>r.createElement(Ar,{src:t,height:e,alt:"Picfair Logo"});de.propTypes={source:i.string.isRequired,height:i.string};de.defaultProps={height:"3rem"};const Nr=x.div`
+  width: ${t=>t.width};
+  ${V("mobile")`display: none;`};
+  ${V("desktop")`
+        display: none;
+    `}
+`,Lr=x.div`
+  height: ${t=>t.height};
+`,Or=x.div`
+  background-image: url(${t=>t.image});
+  position: relative;
+  height: calc(100vh - 260px);
+  min-height: 880px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: ${t=>t.marginLeft};
+  ${t=>t.extraStyles&&ft`
+      ${t.extraStyles}
+    `}; // extra styles
+`;function ke({image:t,width:e,topSpace:n,leftSpace:a,extraStyles:o}){return r.createElement(Nr,{width:e},r.createElement(Lr,{height:n}),r.createElement(Or,{image:t,marginLeft:a,extraStyles:o}))}ke.propTypes={image:i.string.isRequired,width:i.string,topSpace:i.string,leftSpace:i.string,extraStyles:i.object};ke.defaultProps={width:"100%",topSpace:"135px",leftSpace:"40px",extraStyles:null};const Tr="https://assets.picfair.com/vite/assets/picfair-lite-b8f499c8.svg",ie=({features:t})=>{const e=r.createElement("i",{className:"fas fa-check"}),n=a=>a.map(o=>r.createElement(xt,{key:o,text:o,icon:e}));return r.createElement("div",{className:"features"},n(t))};ie.propTypes={features:i.array.isRequired};const ot=({plans:t,handleFree:e,handlePlus:n})=>{l.useEffect(()=>{window.scroll({top:0,left:0}),document.getElementById("form-container").classList.add("new-plans-page")},[]);const a=()=>{document.getElementById("form-container").classList.remove("new-plans-page"),n()},o=()=>["10,000 uploads","Connect your domain","Add custom links"],s=()=>["Publish your store","Add your social accounts","Prioritised image moderation"],d=()=>["Publish your store","10,000 uploads","Connect your domain","Add custom links","Add your social accounts"],p={height:"100%",minHeight:"initial",backgroundSize:"80%",backgroundPosition:"right center"};return r.createElement("div",{className:"new-plans-container"},r.createElement("div",{className:"plus-container"},r.createElement("div",{className:"text-div"},r.createElement(de,{source:St}),r.createElement(ue,{plan:"plus",price:t.year.price,currency:t.year.currency}),r.createElement("div",{className:"features-container"},r.createElement(ie,{features:o()}),r.createElement(ie,{features:s()})),r.createElement("div",{className:"features-mobile-container"},r.createElement(ie,{features:d()})),r.createElement(at,{code:defaultCouponCode,percentage:`${defaultCouponPercent}`}),r.createElement(pe,{onClick:a,text:"Choose Picfair Plus",customClass:"plus-btn"})),r.createElement(ke,{image:Ct,width:"50%",topSpace:"0px",leftSpace:"0px",extraStyles:p})),r.createElement("div",{className:"free-container"},r.createElement("div",{className:"hide-on-tablet"},r.createElement(de,{source:Tr,height:"1.4rem"}),r.createElement(ue,{plan:"free"})),r.createElement("div",{className:"link-button-holder"},r.createElement(Pt,{id:"choose-free-plan",text:"Continue with Picfair Lite",onClick:e,textDecoration:"underline"}))))};ot.propTypes={plans:i.object.isRequired,handleFree:i.func.isRequired,handlePlus:i.func.isRequired};const it=({plans:t,uploadLimit:e})=>{const{setPaying:n}=l.useContext(G),{url:a}=l.useContext(me),o=()=>{Se("/set_free_plan",{plan:"free"},()=>window.location.assign(a))},s=()=>{n(!0)};return r.createElement(ot,{plans:t,uploadLimit:e,handleFree:o,handlePlus:s})};it.propTypes={plans:i.object.isRequired,plansPageProp:i.string,uploadLimit:i.number.isRequired};const st=t=>{const{user:e,setUser:n,paying:a,showNewPaymentPage:o,setShowNewPaymentPage:s,setIsTempEmail:d}=l.useContext(G),{url:p,setUrl:m}=l.useContext(me);l.useEffect(()=>{n(t.user),m(t.backTo),t.user&&g(t.user.email),s(t.showNewPaymentPage)},[t.user]);const g=u=>{u.split("@")[1]=="pf-email-placeholder.com"&&d(!0)},f=()=>(e==null?void 0:e.username)===null?r.createElement(Ge,null):(e==null?void 0:e.picfair_plus_enabled)===null&&!a?r.createElement(it,{plans:t.plans,uploadLimit:t.uploadLimit}):(e==null?void 0:e.picfair_plus_enabled)===null&&a?o?r.createElement(nt,{plans:t.plans,stripe_key:t.stripe_key}):r.createElement(Z,{redirect:"/account/picfair_plus/new"}):(e==null?void 0:e.picfair_plus_enabled)===!1?r.createElement(Z,{redirect:p}):(e==null?void 0:e.picfair_plus_enabled)===!0?r.createElement(Z,{redirect:"/account/picfair_plus"}):r.createElement(Ke,{recaptcha_site_key:t.recaptcha_site_key});return r.createElement("div",{className:"signup-container"},f())};st.propTypes={user:i.object,plans:i.object,backTo:i.string,stripe_key:i.string.isRequired,showNewPaymentPage:i.bool,recaptcha_site_key:i.string,uploadLimit:i.number.isRequired};const ct=t=>r.createElement($e,null,r.createElement(We,null,r.createElement(st,{user:t.user.user,error:t.error,backTo:t.back_to,plans:t.plans,stripe_key:t.stripe_key,showNewPaymentPage:t.showNewPaymentPage,recaptcha_site_key:t.recaptcha_site_key,uploadLimit:t.uploadLimit})));ct.propTypes={user:i.object,error:i.string,back_to:i.string,plans:i.object.isRequired,stripe_key:i.string.isRequired,showNewPaymentPage:i.bool,recaptcha_site_key:i.string,uploadLimit:i.number.isRequired};pt(ct,"#signup");
+//# sourceMappingURL=signup-1bf2ca90.js.map
